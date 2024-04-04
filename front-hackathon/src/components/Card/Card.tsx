@@ -10,11 +10,14 @@ type CardProps = {
 }
 
 function Card({ card }: CardProps) {
-    const [dateRange, setDateRange] = useState<[Date, Date]>([new Date(), new Date()]);
+    const [dateRange, setDateRange] = useState<[string, string]>([new Date().toISOString(), new Date().toISOString()]);
 
     const onChange = (dates: any) => {
-        setDateRange(dates);
+        const isoDates: [string, string] = [dates[0].toISOString().split('T')[0], dates[1].toISOString().split('T')[0]];
+        setDateRange(isoDates);
+        console.log(isoDates);
     }
+
     return (
         <div className="card-content">
             <div className="card-images">
