@@ -15,7 +15,7 @@ public class ActivityModel {
     private String activityDuration;
     @Id
     private Long id;
-    @OneToMany(mappedBy = "activity")
+    @OneToMany(mappedBy = "activity_id")
     private List<ActivityReservationModel> reservations;
 
     public void setId(Long id) {
