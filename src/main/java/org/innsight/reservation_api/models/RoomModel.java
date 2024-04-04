@@ -9,6 +9,7 @@ import java.util.List;
 public class RoomModel {
     @Id
     private Long roomNumber;
+    private String roomName;
     private String roomCapacity;
     private String roomSuperficy;
     @ElementCollection
@@ -28,6 +29,14 @@ public class RoomModel {
 
     public void setRoomNumber(Long roomNumber) {
         this.roomNumber = roomNumber;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 
     public String getRoomCapacity() {

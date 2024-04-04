@@ -5,6 +5,8 @@ import org.innsight.reservation_api.repositories.ActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ActivityService {
     private final ActivityRepository activityRepository;
@@ -14,7 +16,15 @@ public class ActivityService {
     }
 
 
-    public Long addActivity() {
-        return activityRepository.save(new ActivityModel()).getId();
+    public Long addActivity(ActivityModel activity) {
+        return activityRepository.save(activity).getId();
+    }
+
+    public ActivityModel getActivity(Long id) {
+        return activityRepository.findById(id).orElse(null);
+    }
+
+    public List<ActivityModel> getAllActivities() {
+        return activityRepository.findAll();
     }
 }
