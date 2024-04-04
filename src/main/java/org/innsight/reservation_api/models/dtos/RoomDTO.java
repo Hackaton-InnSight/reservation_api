@@ -7,6 +7,7 @@ import java.util.List;
 public class RoomDTO {
     private Long roomNumber;
     private String roomCapacity;
+    private String roomName;
     private String roomSuperficy;
     private List<String> bedType;
     private String description;
@@ -15,6 +16,7 @@ public class RoomDTO {
     private List<RoomReservationDTO> reservations;
 
     public RoomDTO(RoomModel roomModel) {
+        this.roomName = roomModel.getRoomName();
         this.roomNumber = roomModel.getRoomNumber();
         this.roomCapacity = roomModel.getRoomCapacity();
         this.roomSuperficy = roomModel.getRoomSuperficy();
@@ -90,5 +92,13 @@ public class RoomDTO {
 
     public void setDescription2(String description2) {
         this.description2 = description2;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 }
