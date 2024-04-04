@@ -67,4 +67,28 @@ public class RoomDTO {
     public void setReservations(List<RoomReservationDTO> reservations) {
         this.reservations = reservations;
     }
+
+    public List<String> getBedType() {
+        return bedType;
+    }
+
+    public void setBedType(List<String> bedType) {
+        this.bedType = bedType;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription2() {
+        return description2;
+    }
+
+    public void setDescription2(String description2) {
+        this.description2 = description2;
+    }
 }
