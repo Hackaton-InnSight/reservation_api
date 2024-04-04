@@ -1,0 +1,11 @@
+.room-reservation-title {
+    font-size: 60px;
+    background: linear-gradient(to bottom, #00FF29, #00A8BF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: normal;
+}
+
+.room-reservation-name{
+    color: #F3DFBF;
+}
