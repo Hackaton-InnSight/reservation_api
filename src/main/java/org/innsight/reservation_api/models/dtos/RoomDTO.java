@@ -1,6 +1,5 @@
 package org.innsight.reservation_api.models.dtos;
 
-import org.innsight.reservation_api.models.ReservationModel;
 import org.innsight.reservation_api.models.RoomModel;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class RoomDTO {
         this.roomNumber = roomModel.getRoomNumber();
         this.roomCapacity = roomModel.getRoomCapacity();
         this.roomSuperficy = roomModel.getRoomSuperficy();
-        this.roomPrice = roomModel.getRoomPrice();
+        this.roomPrice = roomModel.getRoomPricePerNight();
         this.reservations = ReservationDTO.fromList(roomModel.getReservations());
     }
     public static List<RoomDTO> fromList(List<RoomModel> rooms) {

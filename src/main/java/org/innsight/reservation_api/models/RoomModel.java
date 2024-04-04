@@ -1,7 +1,5 @@
 package org.innsight.reservation_api.models;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,7 +11,13 @@ public class RoomModel {
     private Long roomNumber;
     private String roomCapacity;
     private String roomSuperficy;
-    private String roomPrice;
+    @ElementCollection
+    private List<String> bedType;
+    private Boolean television;
+    private Boolean airConditioning;
+    private Boolean wifi;
+    private Boolean bathroom;
+    private String roomPricePerNight;
     @OneToMany(mappedBy = "room")
     private List<ReservationModel> reservations;
 
@@ -44,12 +48,12 @@ public class RoomModel {
         this.roomSuperficy = roomSuperficy;
     }
 
-    public String getRoomPrice() {
-        return roomPrice;
+    public String getRoomPricePerNight() {
+        return roomPricePerNight;
     }
 
-    public void setRoomPrice(String roomPrice) {
-        this.roomPrice = roomPrice;
+    public void setRoomPricePerNight(String roomPricePerNight) {
+        this.roomPricePerNight = roomPricePerNight;
     }
 
     public List<ReservationModel> getReservations() {
@@ -59,14 +63,44 @@ public class RoomModel {
     public void setReservations(List<ReservationModel> reservations) {
         this.reservations = reservations;
     }
-    @Override
-    public String toString() {
-        return "RoomModel{" +
-                "roomNumber=" + roomNumber +
-                ", roomCapacity='" + roomCapacity + '\'' +
-                ", roomSuperficy='" + roomSuperficy + '\'' +
-                ", roomPrice='" + roomPrice + '\'' +
-                ", reservations=" + reservations +
-                '}';
+
+    public List<String> getBedType() {
+        return bedType;
+    }
+
+    public void setBedType(List<String> bedType) {
+        this.bedType = bedType;
+    }
+
+    public Boolean getTelevision() {
+        return television;
+    }
+
+    public void setTelevision(Boolean television) {
+        this.television = television;
+    }
+
+    public Boolean getAirConditioning() {
+        return airConditioning;
+    }
+
+    public void setAirConditioning(Boolean airConditioning) {
+        this.airConditioning = airConditioning;
+    }
+
+    public Boolean getWifi() {
+        return wifi;
+    }
+
+    public void setWifi(Boolean wifi) {
+        this.wifi = wifi;
+    }
+
+    public Boolean getBathroom() {
+        return bathroom;
+    }
+
+    public void setBathroom(Boolean bathroom) {
+        this.bathroom = bathroom;
     }
 }

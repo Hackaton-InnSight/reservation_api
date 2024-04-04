@@ -13,11 +13,10 @@ public class UserModel {
     private String firstName;
     private String lastName;
     private String email;
+    private String phoneNumber;
     @OneToMany(mappedBy = "user")
     private List<ReservationModel> reservations;
 
-    public UserModel() {
-    }
 
     public Long getId() {
         return id;
@@ -58,6 +57,15 @@ public class UserModel {
     public void setReservations(List<ReservationModel> reservations) {
         this.reservations = reservations;
     }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     @Override
     public String toString() {
         return "UserModel{" +
