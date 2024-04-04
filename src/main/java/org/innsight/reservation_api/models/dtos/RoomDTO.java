@@ -8,6 +8,9 @@ public class RoomDTO {
     private Long roomNumber;
     private String roomCapacity;
     private String roomSuperficy;
+    private List<String> bedType;
+    private String description;
+    private String description2;
     private String roomPrice;
     private List<RoomReservationDTO> reservations;
 
@@ -16,6 +19,9 @@ public class RoomDTO {
         this.roomCapacity = roomModel.getRoomCapacity();
         this.roomSuperficy = roomModel.getRoomSuperficy();
         this.roomPrice = roomModel.getRoomPricePerNight();
+        this.bedType = roomModel.getBedType();
+        this.description = roomModel.getDescription();
+        this.description2 = roomModel.getDescription2();
         this.reservations = RoomReservationDTO.fromList(roomModel.getReservations());
     }
     public static List<RoomDTO> fromList(List<RoomModel> rooms) {
