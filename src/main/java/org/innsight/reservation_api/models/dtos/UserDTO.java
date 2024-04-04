@@ -8,13 +8,13 @@ public class UserDTO {
     private String firstName;
     private String lastName;
     private String email;
-    private List<ReservationDTO> reservations;
+    private List<RoomReservationDTO> reservations;
 
     public UserDTO(UserModel userModel) {
         this.firstName = userModel.getFirstName();
         this.lastName = userModel.getLastName();
         this.email = userModel.getEmail();
-        this.reservations = ReservationDTO.fromList(userModel.getReservations());
+        this.reservations = RoomReservationDTO.fromList(userModel.getReservations());
     }
     public static List<UserDTO> fromList(List<UserModel> users) {
         return users.stream().map(UserDTO::new).toList();
@@ -44,11 +44,11 @@ public class UserDTO {
         this.email = email;
     }
 
-    public List<ReservationDTO> getReservations() {
+    public List<RoomReservationDTO> getReservations() {
         return reservations;
     }
 
-    public void setReservations(List<ReservationDTO> reservations) {
+    public void setReservations(List<RoomReservationDTO> reservations) {
         this.reservations = reservations;
     }
 }

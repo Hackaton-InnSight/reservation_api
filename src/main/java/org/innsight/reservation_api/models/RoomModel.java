@@ -13,13 +13,11 @@ public class RoomModel {
     private String roomSuperficy;
     @ElementCollection
     private List<String> bedType;
-    private Boolean television;
-    private Boolean airConditioning;
-    private Boolean wifi;
-    private Boolean bathroom;
     private String roomPricePerNight;
+    private String description;
+    private String description2;
     @OneToMany(mappedBy = "room")
-    private List<ReservationModel> reservations;
+    private List<RoomReservationModel> reservations;
 
     public RoomModel() {
     }
@@ -56,11 +54,11 @@ public class RoomModel {
         this.roomPricePerNight = roomPricePerNight;
     }
 
-    public List<ReservationModel> getReservations() {
+    public List<RoomReservationModel> getReservations() {
         return reservations;
     }
 
-    public void setReservations(List<ReservationModel> reservations) {
+    public void setReservations(List<RoomReservationModel> reservations) {
         this.reservations = reservations;
     }
 
@@ -72,35 +70,19 @@ public class RoomModel {
         this.bedType = bedType;
     }
 
-    public Boolean getTelevision() {
-        return television;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTelevision(Boolean television) {
-        this.television = television;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Boolean getAirConditioning() {
-        return airConditioning;
+    public String getDescription2() {
+        return description2;
     }
 
-    public void setAirConditioning(Boolean airConditioning) {
-        this.airConditioning = airConditioning;
-    }
-
-    public Boolean getWifi() {
-        return wifi;
-    }
-
-    public void setWifi(Boolean wifi) {
-        this.wifi = wifi;
-    }
-
-    public Boolean getBathroom() {
-        return bathroom;
-    }
-
-    public void setBathroom(Boolean bathroom) {
-        this.bathroom = bathroom;
+    public void setDescription2(String description2) {
+        this.description2 = description2;
     }
 }

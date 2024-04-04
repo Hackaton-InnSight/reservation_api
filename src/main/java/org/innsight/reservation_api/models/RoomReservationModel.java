@@ -1,15 +1,12 @@
 package org.innsight.reservation_api.models;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "reservations")
-public class ReservationModel {
+@Table(name = "room_reservations")
+public class RoomReservationModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,7 +17,7 @@ public class ReservationModel {
     @ManyToOne(targetEntity = RoomModel.class)
     private RoomModel room;
 
-    public ReservationModel() {
+    public RoomReservationModel() {
     }
 
     public Long getId() {

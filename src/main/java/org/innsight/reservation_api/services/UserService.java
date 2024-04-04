@@ -1,7 +1,6 @@
 package org.innsight.reservation_api.services;
 
 import org.innsight.reservation_api.models.UserModel;
-import org.innsight.reservation_api.repositories.ReservationsRepository;
 import org.innsight.reservation_api.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

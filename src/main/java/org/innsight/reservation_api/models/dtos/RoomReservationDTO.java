@@ -1,11 +1,11 @@
 package org.innsight.reservation_api.models.dtos;
 
-import org.innsight.reservation_api.models.ReservationModel;
+import org.innsight.reservation_api.models.RoomReservationModel;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class ReservationDTO {
+public class RoomReservationDTO {
     private Long id;
     private Long roomId;
     private String userFirstName;
@@ -13,17 +13,17 @@ public class ReservationDTO {
     private LocalDate checkIn;
     private LocalDate checkOut;
 
-    public ReservationDTO(ReservationModel reservationModel) {
-        this.id = reservationModel.getId();
-        this.roomId = reservationModel.getRoom().getRoomNumber();
-        this.userFirstName = reservationModel.getUser().getFirstName();
-        this.userLastName = reservationModel.getUser().getLastName();
-        this.checkIn = reservationModel.getCheckIn();
-        this.checkOut = reservationModel.getCheckOut();
+    public RoomReservationDTO(RoomReservationModel roomReservationModel) {
+        this.id = roomReservationModel.getId();
+        this.roomId = roomReservationModel.getRoom().getRoomNumber();
+        this.userFirstName = roomReservationModel.getUser().getFirstName();
+        this.userLastName = roomReservationModel.getUser().getLastName();
+        this.checkIn = roomReservationModel.getCheckIn();
+        this.checkOut = roomReservationModel.getCheckOut();
     }
 
-    public static List<ReservationDTO> fromList(List<ReservationModel> reservations) {
-        return reservations.stream().map(ReservationDTO::new).toList();
+    public static List<RoomReservationDTO> fromList(List<RoomReservationModel> reservations) {
+        return reservations.stream().map(RoomReservationDTO::new).toList();
     }
 
     public Long getId() {

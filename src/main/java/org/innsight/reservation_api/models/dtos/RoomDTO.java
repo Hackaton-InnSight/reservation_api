@@ -9,14 +9,14 @@ public class RoomDTO {
     private String roomCapacity;
     private String roomSuperficy;
     private String roomPrice;
-    private List<ReservationDTO> reservations;
+    private List<RoomReservationDTO> reservations;
 
     public RoomDTO(RoomModel roomModel) {
         this.roomNumber = roomModel.getRoomNumber();
         this.roomCapacity = roomModel.getRoomCapacity();
         this.roomSuperficy = roomModel.getRoomSuperficy();
         this.roomPrice = roomModel.getRoomPricePerNight();
-        this.reservations = ReservationDTO.fromList(roomModel.getReservations());
+        this.reservations = RoomReservationDTO.fromList(roomModel.getReservations());
     }
     public static List<RoomDTO> fromList(List<RoomModel> rooms) {
         return rooms.stream().map(RoomDTO::new).toList();
@@ -54,11 +54,11 @@ public class RoomDTO {
         this.roomPrice = roomPrice;
     }
 
-    public List<ReservationDTO> getReservations() {
+    public List<RoomReservationDTO> getReservations() {
         return reservations;
     }
 
-    public void setReservations(List<ReservationDTO> reservations) {
+    public void setReservations(List<RoomReservationDTO> reservations) {
         this.reservations = reservations;
     }
 }

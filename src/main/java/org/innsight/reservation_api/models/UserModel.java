@@ -15,7 +15,7 @@ public class UserModel {
     private String email;
     private String phoneNumber;
     @OneToMany(mappedBy = "user")
-    private List<ReservationModel> reservations;
+    private List<RoomReservationModel> reservations;
 
 
     public Long getId() {
@@ -50,11 +50,11 @@ public class UserModel {
         this.email = email;
     }
 
-    public List<ReservationModel> getReservations() {
+    public List<RoomReservationModel> getReservations() {
         return reservations;
     }
 
-    public void setReservations(List<ReservationModel> reservations) {
+    public void setReservations(List<RoomReservationModel> reservations) {
         this.reservations = reservations;
     }
 
