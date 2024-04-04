@@ -36,7 +36,7 @@ public class RoomController {
     public ResponseEntity<Object> getAllRooms() {
         return ResponseEntity.ok(roomService.getAllRooms());
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{delete/id}")
     public ResponseEntity<Object> deleteRoom(@PathVariable Long id) {
         if(roomService.deleteRoom(id)) {
             return ResponseEntity.ok().build();
