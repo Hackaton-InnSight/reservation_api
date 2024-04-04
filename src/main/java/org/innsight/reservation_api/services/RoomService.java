@@ -29,4 +29,13 @@ public class RoomService {
     public List<RoomDTO> getAllRooms() {
         return RoomDTO.fromList(roomsRepository.findAll());
     }
+
+    public boolean deleteRoom(Long id) {
+        if(roomsRepository.existsById(id)) {
+            roomsRepository.deleteById(id);
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
