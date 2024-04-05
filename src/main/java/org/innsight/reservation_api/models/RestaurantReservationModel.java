@@ -11,6 +11,7 @@ public class RestaurantReservationModel {
 
     @Id
     private Long id;
+    @ManyToOne(targetEntity = UserModel.class)
     private Long userId;
     @ManyToOne(targetEntity = TableModel.class)
     private Long tableId;

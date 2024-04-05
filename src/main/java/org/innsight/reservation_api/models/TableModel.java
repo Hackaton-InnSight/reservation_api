@@ -1,9 +1,6 @@
 package org.innsight.reservation_api.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -14,8 +11,10 @@ public class TableModel {
     @Id
     private Long id;
     private double capacity;
-    @OneToMany(mappedBy = "table")
+    @OneToMany(mappedBy = "tableId")
     private List<RestaurantReservationModel> reservations;
+    @ManyToOne(targetEntity = RestaurantModel.class)
+    private Long restaurantId;
 
     public void setId(Long id) {
         this.id = id;

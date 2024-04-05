@@ -16,7 +16,7 @@ public class UserModel {
     private String phoneNumber;
     @OneToMany(mappedBy = "user")
     private List<RoomReservationModel> reservations;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userId")
     private List<RestaurantReservationModel> restaurantReservations;
 
 

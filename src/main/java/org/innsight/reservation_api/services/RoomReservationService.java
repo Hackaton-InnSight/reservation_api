@@ -6,6 +6,7 @@ import org.innsight.reservation_api.repositories.RoomReservationsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -23,5 +24,12 @@ public class RoomReservationService {
 
     public List<RoomReservationDTO> getAllReservations(){
         return RoomReservationDTO.fromList(roomReservationsRepository.findAll());
+    }
+
+    public Boolean getReservationsByMail(String mail) {
+        LocalDate now = LocalDate.now();
+        return roomReservationsRepository.findByUserEmail(mail)
+                .stream()
+                .noneMatch(reservation -> reservation.getCheckIn().isBefore(now) && reservation.getCheckOut().isAfter(now));
     }
 }

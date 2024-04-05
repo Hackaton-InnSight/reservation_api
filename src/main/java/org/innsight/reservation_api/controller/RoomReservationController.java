@@ -1,5 +1,6 @@
 package org.innsight.reservation_api.controller;
 
+import jakarta.websocket.server.PathParam;
 import org.innsight.reservation_api.models.RoomReservationModel;
 import org.innsight.reservation_api.services.RoomReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,9 @@ public class RoomReservationController {
     @GetMapping("/all")
     public ResponseEntity<Object> getAllReservations() {
         return ResponseEntity.ok(roomReservationService.getAllReservations());
+    }
+    @GetMapping()
+    public ResponseEntity<Object> getReservationsByMail(@RequestParam("mail") String mail) {
+        return ResponseEntity.ok(roomReservationService.getReservationsByMail(mail));
     }
 }
