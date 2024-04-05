@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 @RestController
@@ -43,5 +45,13 @@ public class RoomController {
         }else {
             return ResponseEntity.notFound().build();
         }
+    }
+    @GetMapping("/available")
+    public List<RoomDTO> getRoomsAvailable(@RequestParam LocalDate checkIn, @RequestParam LocalDate checkOut) {
+        return roomService.getRoomsAvailable(checkIn, checkOut);
+    }
+    @GetMapping("/available/{id}")
+    public Object getRoomAvailable(@PathVariable Long id, @RequestParam LocalDate checkIn, @RequestParam LocalDate checkOut) {
+        return roomService.getRoomAvailable(id, checkIn, checkOut);
     }
 }

@@ -6,6 +6,7 @@ import org.innsight.reservation_api.repositories.RoomsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,5 +38,24 @@ public class RoomService {
         }else {
             return false;
         }
+    }
+
+    public List<RoomDTO> getRoomsAvailable(LocalDate checkIn, LocalDate checkOut) {
+        List<RoomModel> rooms = roomsRepository.findAll();
+        return RoomDTO.fromList(rooms.stream()
+                .filter(room -> room.getReservations()
+                        .stream()
+                        .noneMatch(reservation -> reservation.getCheckIn().isBefore(checkOut) && reservation.getCheckOut().isAfter(checkIn)))
+                .toList());
+    }
+
+    public Boolean getRoomAvailable(Long id, LocalDate checkIn, LocalDate checkOut) {
+        RoomModel room = roomsRepository.findById(id).orElse(null);
+        if(room == null) {
+            return false;
+        }
+        return room.getReservations()
+                .stream()
+                .noneMatch(reservation -> reservation.getCheckIn().isBefore(checkOut) && reservation.getCheckOut().isAfter(checkIn));
     }
 }
