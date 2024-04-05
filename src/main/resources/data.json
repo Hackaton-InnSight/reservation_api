@@ -1,0 +1,92 @@
+{
+  "rooms": [
+    {
+      "roomNumber": 1,
+      "roomName": "\"Chambre 2 personnes “Deluxe”\"",
+      "roomCapacity": "2",
+      "roomSuperficy": "20",
+      "bedType": ["Double"],
+      "roomPricePerNight": 100.00,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 2,
+      "roomName": "\"Chambre 4 personnes “Deluxe”\"",
+      "roomCapacity": "4",
+      "roomSuperficy": "30",
+      "bedType": ["Double", "Double"],
+      "roomPricePerNight": 150,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 3,
+      "roomName": "\"Chambre 2 personnes “Double-Double”\"",
+      "roomCapacity": "4",
+      "roomSuperficy": "30",
+      "bedType": ["Quenn Size"],
+      "roomPricePerNight": 250.00,
+      "description": "Salle de bain privée avec deux baignoires\nDeux chiottes\nDeux lavabos",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 4,
+      "roomName": "\"Chambre 6 personnes “Royale”\"",
+      "roomCapacity": "6",
+      "roomSuperficy": "150",
+      "bedType": ["Queen size", "Queen size", "Queen size"],
+      "roomPricePerNight": 500,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 5,
+      "roomName": "\"Chambre 3 personnes “Famille”\"",
+      "roomCapacity": "3",
+      "roomSuperficy": "35",
+      "bedType": ["Simple", "Simple", "Simple"],
+      "roomPricePerNight": 180,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 6,
+      "roomName": "\"Chambre 12 personnes “Famille Nombreuse”\"",
+      "roomCapacity": "2",
+      "roomSuperficy": "150",
+      "bedType": ["Double", "Double", "Double", "Double", "Double", "Double", "Double", "Double", "Double", "Double", "Double", "Double"],
+      "roomPricePerNight": 210,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 7,
+      "roomName": "\"Chambre 4 personnes “Royale”\"",
+      "roomCapacity": "4",
+      "roomSuperficy": "40",
+      "bedType": ["Queen", "Queen"],
+      "roomPricePerNight": 200,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    },
+    {
+      "roomNumber": 8,
+      "roomName": "\"Chambre 6 personnes “Présidentiel”\"",
+      "roomCapacity": "6",
+      "roomSuperficy": "600",
+      "bedType": ["King Size", "King Size", "King Size"],
+      "roomPricePerNight": 560,
+      "description": "Salle de bain privée avec baignoire\nEspace de rangement\nClimatisation et chauffage",
+      "description2": "Télévision\nConnexion Wi-Fi\nMachine à café\nDécoration moderne et confort",
+      "reservations": []
+    }
+  ]
+}

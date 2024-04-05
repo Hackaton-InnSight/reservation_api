@@ -69,4 +69,5 @@ public class RestaurantReservationModel {
     public Long getId() {
         return id;
     }
+
 }
