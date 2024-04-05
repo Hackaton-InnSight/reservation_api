@@ -1,5 +1,6 @@
 package org.innsight.reservation_api.services;
 
+import org.innsight.reservation_api.models.UserAddResponse;
 import org.innsight.reservation_api.models.UserModel;
 import org.innsight.reservation_api.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public Long addUser(UserModel userModel) {
-        return userRepository.save(userModel).getId();
+    public UserAddResponse addUser(UserModel userModel) {
+        return new UserAddResponse(userRepository.save(userModel));
     }
 
     public UserModel getUser(Long id) {

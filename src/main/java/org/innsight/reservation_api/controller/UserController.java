@@ -17,7 +17,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public Long addUser(@RequestBody UserModel userModel) {
+    public Object addUser(@RequestBody UserModel userModel) {
         return userService.addUser(userModel);
     }
     @GetMapping("/{id}")
