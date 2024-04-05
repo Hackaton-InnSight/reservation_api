@@ -6,6 +6,7 @@ import RoomServices from "../../services/RoomServices.tsx";
 import UserServices from "../../services/UserServices.tsx";
 import ReservationServices from "../../services/ReservationServices.tsx";
 import {Room, User} from "../../interfaces/ReservationInterface.tsx";
+import PopUp from "../../components/PopUp/PopUp.tsx";
 
 
 
@@ -22,6 +23,8 @@ export default function Reservation() {
     const [lastName, setLastName] = useState('');
     const [phone, setPhone] = useState('');
 
+    const [isSuccess, setIsSuccess] = useState(false);
+
     const handleSubmit = (event: any) => {
         event.preventDefault();
         if (checkIn && checkOut && id) {
@@ -35,11 +38,16 @@ export default function Reservation() {
                         checkOut: checkOut,
                         user: userId
                     })
-                        .then(r => console.log(r.data));
+                        .then(r => {
+                            console.log(r.data);
+                            setIsSuccess(true);
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            setIsSuccess(false);
+                        });
                 });
         }
-
-        // Handle form submission here
     };
 
     useEffect((): void => {
@@ -62,24 +70,25 @@ export default function Reservation() {
                      src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/497846967.jpg?k=a4c4edf6e662dc0bcfd851708108dae7925e44cfe0387292259a37d1c0b86ed1&o=&hp=1"
                      alt="image2"/>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form className="room-reservation-form" onSubmit={handleSubmit}>
                 <label>
                     Email :
-                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} required/>
+                    <input className="room-reservation-email" type="email" value={email} onChange={e => setEmail(e.target.value)} required/>
                 </label>
                 <label>
                     Prénom:
-                    <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)} required/>
+                    <input className="room-reservation-firstname" type="text" value={firstName} onChange={e => setFirstName(e.target.value)} required/>
                 </label>
                 <label>
                     Nom:
-                    <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} required/>
+                    <input className="room-reservation-lastname" type="text" value={lastName} onChange={e => setLastName(e.target.value)} required/>
                 </label>
                 <label>
                     Téléphone:
-                    <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} required/>
+                    <input className="room-reservation-phone" type="tel" value={phone} onChange={e => setPhone(e.target.value)} required/>
                 </label>
-                <button type="submit">Confirmer</button>
+                <button className="room-reservation-btn" type="submit">Confirmer</button>
+                <PopUp isSuccess={isSuccess} />
             </form>
         </div>
     );

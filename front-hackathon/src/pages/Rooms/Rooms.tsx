@@ -5,7 +5,7 @@ import Button from "../../components/Button/Button.tsx";
 import React from 'react';
 import RoomServices from "../../services/RoomServices.tsx";
 import {RoomInterface} from "../../interfaces/RoomInterface.tsx";
-import {useNavigate} from "react-router-dom";
+
 
 
 async function fetchRooms(setCards: React.Dispatch<React.SetStateAction<RoomInterface[]>>) {
@@ -21,7 +21,7 @@ async function fetchRooms(setCards: React.Dispatch<React.SetStateAction<RoomInte
 export default function Rooms() {
     const [currentCard, setCurrentCard] = useState(0);
     const [cards, setCards] = useState<RoomInterface[]>([]);
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
 
     useEffect((): void => {
@@ -46,7 +46,7 @@ export default function Rooms() {
                 index === currentCard &&
                 <React.Fragment key={index}>
                     <Card card={card}/>
-                    <Button className={"btn-book"} name={"Book"} onClick={() => navigate(`/reservation/${card.roomNumber}`)} />
+
                 </React.Fragment>
             ))}
             <div className="rooms-btn-switch">
