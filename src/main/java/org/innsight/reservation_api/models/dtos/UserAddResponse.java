@@ -1,4 +1,6 @@
-package org.innsight.reservation_api.models;
+package org.innsight.reservation_api.models.dtos;
+
+import org.innsight.reservation_api.models.UserModel;
 
 public class UserAddResponse {
     private Long id;

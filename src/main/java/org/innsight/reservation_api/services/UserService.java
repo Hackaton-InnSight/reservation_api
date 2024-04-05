@@ -1,6 +1,6 @@
 package org.innsight.reservation_api.services;
 
-import org.innsight.reservation_api.models.UserAddResponse;
+import org.innsight.reservation_api.models.dtos.UserAddResponse;
 import org.innsight.reservation_api.models.UserModel;
 import org.innsight.reservation_api.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

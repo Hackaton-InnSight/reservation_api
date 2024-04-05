@@ -1,6 +1,7 @@
 package org.innsight.reservation_api.services;
 
 import org.innsight.reservation_api.models.RoomReservationModel;
+import org.innsight.reservation_api.models.dtos.EmailReservationResponse;
 import org.innsight.reservation_api.models.dtos.RoomReservationDTO;
 import org.innsight.reservation_api.repositories.RoomReservationsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,10 @@ public class RoomReservationService {
         return RoomReservationDTO.fromList(roomReservationsRepository.findAll());
     }
 
-    public Boolean getReservationsByMail(String mail) {
+    public EmailReservationResponse getReservationsByMail(String mail) {
         LocalDate now = LocalDate.now();
-        return roomReservationsRepository.findByUserEmail(mail)
+        return new EmailReservationResponse(roomReservationsRepository.findByUserEmail(mail)
                 .stream()
-                .noneMatch(reservation -> reservation.getCheckIn().isBefore(now) && reservation.getCheckOut().isAfter(now));
+                .noneMatch(reservation -> reservation.getCheckIn().isBefore(now) && reservation.getCheckOut().isAfter(now)));
     }
 }
