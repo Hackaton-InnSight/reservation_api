@@ -2,7 +2,8 @@ import Calendar from 'react-calendar';
 import {RoomInterface} from "../../interfaces/RoomInterface.tsx";
 import 'react-calendar/dist/Calendar.css';
 import "./Card.css";
-import {useState} from "react";
+import { useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 
 type CardProps = {
@@ -11,11 +12,13 @@ type CardProps = {
 
 function Card({ card }: CardProps) {
     const [dateRange, setDateRange] = useState<[string, string]>([new Date().toISOString(), new Date().toISOString()]);
+    const navigate = useNavigate();
 
     const onChange = (dates: any) => {
         const isoDates: [string, string] = [dates[0].toISOString().split('T')[0], dates[1].toISOString().split('T')[0]];
         setDateRange(isoDates);
         console.log(isoDates);
+        navigate(`/reservation/${card.roomNumber}?checkIn=${isoDates[0]}&checkOut=${isoDates[1]}`);
     }
 
     return (

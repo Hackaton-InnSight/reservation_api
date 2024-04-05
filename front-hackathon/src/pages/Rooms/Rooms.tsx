@@ -23,6 +23,7 @@ export default function Rooms() {
     const [cards, setCards] = useState<RoomInterface[]>([]);
     const navigate = useNavigate();
 
+
     useEffect((): void => {
         fetchRooms(setCards).then(r => r);
     }, []);
