@@ -87,8 +87,8 @@ export default function Reservation() {
                     Téléphone:
                     <input className="room-reservation-phone" type="tel" value={phone} onChange={e => setPhone(e.target.value)} required/>
                 </label>
-                <button className="room-reservation-btn" type="submit">Confirmer</button>
                 <PopUp isSuccess={isSuccess} />
+                <button className="room-reservation-btn" type="submit">Confirmer</button>
             </form>
         </div>
     );
