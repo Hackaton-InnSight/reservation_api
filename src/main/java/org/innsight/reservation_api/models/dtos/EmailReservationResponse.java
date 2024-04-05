@@ -1,17 +1,17 @@
 package org.innsight.reservation_api.models.dtos;
 
 public class EmailReservationResponse {
-    private Boolean available;
+    private Boolean isClient;
 
-    public EmailReservationResponse(Boolean available) {
-        this.available = available;
+    public EmailReservationResponse(Boolean isClient) {
+        this.isClient = isClient;
     }
 
     public Boolean getAvailable() {
-        return available;
+        return isClient;
     }
 
-    public void setAvailable(Boolean available) {
-        this.available = available;
+    public void setAvailable(Boolean isClient) {
+        this.isClient = isClient;
     }
 }
