@@ -7,11 +7,11 @@ public class EmailReservationResponse {
         this.isClient = isClient;
     }
 
-    public Boolean getAvailable() {
+    public Boolean getIsClient() {
         return isClient;
     }
 
-    public void setAvailable(Boolean isClient) {
+    public void setIsClient(Boolean isClient) {
         this.isClient = isClient;
     }
 }
